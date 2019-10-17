@@ -45,7 +45,7 @@ int main(void)
     volatile unsigned int i;
     WDTCTL = WDTPW + WDTHOLD;                 // Stop watchdog timer
     P1DIR |= 0x01;                            // Set P1.0 to output direction
-    P1DIR |= 0x40;                            // configure P9.0 as output
+    P1DIR |= 0x40;                            // configure P1.7 as output
 
     while(1)
     {
@@ -54,7 +54,7 @@ int main(void)
 
         for (i=10000; i>0; i--)              //Delay
             if(i == 5000)
-                P1OUT ^= 0x40;              //Toggle P9.7
+                P1OUT ^= 0x40;              //Toggle P1.7
 
   }
 }
